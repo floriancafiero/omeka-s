@@ -36,9 +36,9 @@ class RdfImporter
     /**
      * The property types to import.
      *
-     * Not included are the OWL DL properties owl:AnnotationProperty and
-     * owl:OntologyProperty because they typically serve internal annotative
-     * purposes.
+     * Included again the OWL DL properties owl:AnnotationProperty and
+     * owl:OntologyProperty, in order to be able to manage properly SKOS
+     * vocabularies / thesaurus.
      *
      * @var array
      */
@@ -50,6 +50,8 @@ class RdfImporter
         'owl:TransitiveProperty',
         'owl:FunctionalProperty',
         'owl:InverseFunctionalProperty',
+        'owl:OntologyProperty',
+        'owl:AnnotationProperty',
     ];
 
     public function __construct(ApiManager $apiManager, EntityManager $entityManager)
